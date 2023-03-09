@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+
+<!-- Comienzo de atributos -->
+
+<xs:attribute name="idAsociacion"/>
+<xs:attribute name="idPlaneta"/>
+<xs:attribute name="idPersonaje"/>
+<xs:attribute name="idPelicula"/>
+<xs:attribute name="idMuerte"/>
+<xs:attribute name="fkPlaneta"/>
+<xs:attribute name="fkPersonaje"/>
+<xs:attribute name="fkAsociacion"/>
+<xs:attribute name="fkPelicula"/>
+<xs:attribute name="fkFallecido"/>
+<xs:attribute name="fkAsesino"/>
+
+<!-- Comienzo de la referencia de la tabla planeta -->
+
+<xs:element name="starwars"/>
+<xs:element name="nombre" type="xs:string"/>
+<xs:element name="rotacionPeriodo" />
+<xs:element name="orbitalPeriodo"/>
+<xs:element name="diametro"/>
+<xs:element name="clima"/>
+<xs:element name="gravedad"/>
+<xs:element name="terreno"/>
+<xs:element name="superficieAgua"/>
+<xs:element name="poblacion"/>
+<xs:element name="creacionFecha"/>
+
+<!-- Comienzo de la referencia de la tabla personaje -->
+
+<xs:element name="altura"/>
+<xs:element name="peso"/>
+<xs:element name="peloColor"/>
+<xs:element name="pielColor"/>
+<xs:element name="ojosColor"/>
+<xs:element name="nacimientoAnho"/>
+<xs:element name="genero"/>
+<xs:element name="fkPlaneta"/>
+
+<!-- Comienzo de la referencia de la tabla pelicula -->
+
+<xs:element name="episodio"/>
+<xs:element name="titulo"/>
+
+
+  <xs:element name="asociacion">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="nombre"/>
+      </xs:sequence>
+        <xs:attribute ref="idAsociacion"/>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="planeta">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="nombre"/>
+        <xs:element ref="rotacionPeriodo"/>
+        <xs:element ref="orbitalPeriodo"/>
+        <xs:element ref="diametro"/>
+        <xs:element ref="clima"/>
+        <xs:element ref="gravedad"/>
+        <xs:element ref="terreno"/>
+        <xs:element ref="superficieAgua"/>
+        <xs:element ref="poblacion"/>
+        <xs:element ref="creacionFecha"/>
+      </xs:sequence>
+        <xs:attribute ref="idPlaneta"/>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="personaje">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="nombre"/>
+        <xs:element ref="altura"/>
+        <xs:element ref="peso"/>
+        <xs:element ref="peloColor"/>
+        <xs:element ref="pielColor"/>
+        <xs:element ref="ojosColor"/>
+        <xs:element ref="nacimientoAnho"/>
+        <xs:element ref="genero"/>
+        <xs:element ref="fkPlaneta"/>
+        <xs:element ref="creacionFecha"/>
+      </xs:sequence>
+        <xs:attribute ref="idPersonaje"/>
+    </xs:complexType>
+  </xs:element>
+
+<xs:element name="personajeAsociacion">
+    <xs:complexType>
+        <xs:sequence>
+        </xs:sequence>
+            <xs:attribute name="fkPersonaje"/>
+            <xs:attribute name="fkAsociacion"/> 
+    </xs:complexType>
+</xs:element>
+
+<xs:element name="pelicula">
+    <xs:complexType>
+        <xs:sequence>
+            <xs:element ref="episodio"/>
+            <xs:element ref="titulo"/>
+        </xs:sequence>
+            <xs:attribute name="idPelicula"/>
+    </xs:complexType>
+</xs:element>
+
+<xs:element name="personajePelicula">
+    <xs:complexType>
+        <xs:sequence>
+        </xs:sequence>
+            <xs:attribute name="fkPersonaje"/> 
+            <xs:attribute name="fkPelicula"/>
+    </xs:complexType>
+</xs:element>
+
+<xs:element name="muerte">
+    <xs:complexType>
+        <xs:sequence>
+        </xs:sequence>
+            <xs:attribute name="idMuerte"/>
+            <xs:attribute name="fkFallecido"/> 
+            <xs:attribute name="fkAsesino"/> 
+            <xs:attribute name="fkPelicula"/>
+    </xs:complexType>
+</xs:element>
+</xs:schema>
