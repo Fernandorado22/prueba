@@ -1,25 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
 
+<!-- Restriciones -->
+
+<xs:simpleType name="typeId">
+    <xs:restriction base ="xs:nonNegativeInteger"/>
+</xs:simpleType>
+
 <!-- Comienzo de atributos -->
 
-<xs:attribute name="idAsociacion"/>
-<xs:attribute name="idPlaneta"/>
-<xs:attribute name="idPersonaje"/>
-<xs:attribute name="idPelicula"/>
-<xs:attribute name="idMuerte"/>
-<xs:attribute name="fkPlaneta"/>
-<xs:attribute name="fkPersonaje"/>
-<xs:attribute name="fkAsociacion"/>
-<xs:attribute name="fkPelicula"/>
-<xs:attribute name="fkFallecido"/>
-<xs:attribute name="fkAsesino"/>
+<xs:attribute name="idAsociacion" type="typeId"/>
+<xs:attribute name="idPlaneta" type="typeId"/>
+<xs:attribute name="idPersonaje" type="typeId"/>
+<xs:attribute name="idPelicula" type="typeId"/>
+<xs:attribute name="idMuerte" type="typeId"/>
+<xs:attribute name="fkPlaneta" type="typeId"/>
+<xs:attribute name="fkPersonaje" type="typeId"/>
+<xs:attribute name="fkAsociacion" type="typeId"/>
+<xs:attribute name="fkPelicula" type="typeId"/>
+<xs:attribute name="fkFallecido" type="typeId"/>
+<xs:attribute name="fkAsesino" type="typeId"/>
 
 <!-- Comienzo de la referencia de la tabla planeta -->
 
 <xs:element name="starwars"/>
 <xs:element name="nombre" type="xs:string"/>
-<xs:element name="rotacionPeriodo" />
+<xs:element name="rotacionPeriodo" type="xs:string"/>
 <xs:element name="orbitalPeriodo"/>
 <xs:element name="diametro"/>
 <xs:element name="clima"/>
