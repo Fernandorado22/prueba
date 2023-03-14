@@ -26,14 +26,14 @@
 <xs:element name="starwars"/>
 <xs:element name="nombre" type="xs:string"/>
 <xs:element name="rotacionPeriodo" type="xs:string"/>
-<xs:element name="orbitalPeriodo"/>
-<xs:element name="diametro"/>
-<xs:element name="clima"/>
-<xs:element name="gravedad"/>
-<xs:element name="terreno"/>
-<xs:element name="superficieAgua"/>
-<xs:element name="poblacion"/>
-<xs:element name="creacionFecha"/>
+<xs:element name="orbitalPeriodo" type="xs:string"/>
+<xs:element name="diametro" type="xs:string"/>
+<xs:element name="clima" type="xs:string"/>
+<xs:element name="gravedad" type="xs:string"/>
+<xs:element name="terreno" type="xs:string"/>
+<xs:element name="superficieAgua" type="xs:string"/>
+<xs:element name="poblacion" type="xs:string"/>
+<xs:element name="creacionFecha" type="xs:string"/>
 
 <!-- Comienzo de la referencia de la tabla personaje -->
 
