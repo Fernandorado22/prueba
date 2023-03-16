@@ -2,11 +2,19 @@
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
 
 <!-- Estructura Base de Datos -->
-
-
-<xs:simpleType name="typeId">
-    <xs:restriction base ="xs:nonNegativeInteger"/>
-</xs:simpleType>
+<xs:element name="starwars">
+  <xs:complexType>
+    <xs:sequence>
+      <xs:element ref="tabla_asociacion"/>
+      <xs:element ref="tabla_planeta"/>
+      <xs:element ref="tabla_personaje"/>
+      <xs:element ref="tabla_personajeAsociacion"/>
+      <xs:element ref="tabla_pelicula"/>
+      <xs:element ref="tabla_personajePelicula"/>
+      <xs:element ref="tabla_muerte"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:element>
 
 <!-- Filas -->
 
@@ -150,4 +158,9 @@
             <xs:attribute name="fkPelicula" type="typeId"/>
     </xs:complexType>
 </xs:element>
+
+<xs:simpleType name="typeId">
+    <xs:restriction base ="xs:nonNegativeInteger"/>
+</xs:simpleType>
+
 </xs:schema>
