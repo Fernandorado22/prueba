@@ -7,93 +7,47 @@
     <xs:restriction base ="xs:nonNegativeInteger"/>
 </xs:simpleType>
 
-<!-- Comienzo de atributos -->
-
-<xs:attribute name="idAsociacion" type="typeId"/>
-<xs:attribute name="idPlaneta" type="typeId"/>
-<xs:attribute name="idPersonaje" type="typeId"/>
-<xs:attribute name="idPelicula" type="typeId"/>
-<xs:attribute name="idMuerte" type="typeId"/>
-<xs:attribute name="fkPlaneta" type="typeId"/>
-<xs:attribute name="fkPersonaje" type="typeId"/>
-<xs:attribute name="fkAsociacion" type="typeId"/>
-<xs:attribute name="fkPelicula" type="typeId"/>
-<xs:attribute name="fkFallecido" type="typeId"/>
-<xs:attribute name="fkAsesino" type="typeId"/>
-
-<!-- Comienzo de la referencia de la tabla planeta -->
-
-<xs:element name="starwars"/>
-<xs:element name="nombre" type="xs:string"/>
-<xs:element name="rotacionPeriodo" type="xs:string"/>
-<xs:element name="orbitalPeriodo" type="xs:string"/>
-<xs:element name="diametro" type="xs:string"/>
-<xs:element name="clima" type="xs:string"/>
-<xs:element name="gravedad" type="xs:string"/>
-<xs:element name="terreno" type="xs:string"/>
-<xs:element name="superficieAgua" type="xs:string"/>
-<xs:element name="poblacion" type="xs:string"/>
-<xs:element name="creacionFecha" type="xs:string"/>
-
-<!-- Comienzo de la referencia de la tabla personaje -->
-
-<xs:element name="altura"/>
-<xs:element name="peso"/>
-<xs:element name="peloColor"/>
-<xs:element name="pielColor"/>
-<xs:element name="ojosColor"/>
-<xs:element name="nacimientoAnho"/>
-<xs:element name="genero"/>
-<xs:element name="fkPlaneta"/>
-
-<!-- Comienzo de la referencia de la tabla pelicula -->
-
-<xs:element name="episodio"/>
-<xs:element name="titulo"/>
-
-
   <xs:element name="asociacion">
     <xs:complexType>
       <xs:sequence>
-        <xs:element ref="nombre"/>
+        <xs:element name="a.nombre" type="xs:string"/>
       </xs:sequence>
-        <xs:attribute ref="idAsociacion"/>
+      <xs:attribute name="idAsociacion" type="typeId"/>
     </xs:complexType>
   </xs:element>
 
   <xs:element name="planeta">
     <xs:complexType>
       <xs:sequence>
-        <xs:element ref="nombre"/>
-        <xs:element ref="rotacionPeriodo"/>
-        <xs:element ref="orbitalPeriodo"/>
-        <xs:element ref="diametro"/>
-        <xs:element ref="clima"/>
-        <xs:element ref="gravedad"/>
-        <xs:element ref="terreno"/>
-        <xs:element ref="superficieAgua"/>
-        <xs:element ref="poblacion"/>
-        <xs:element ref="creacionFecha"/>
+        <xs:element name="p.nombre" type="xs:string"/>
+        <xs:element name="rotacionPeriodo" type="xs:string"/>
+        <xs:element name="orbitalPeriodo" type="xs:string"/>
+        <xs:element name="diametro" type="xs:string"/>
+        <xs:element name="clima" type="xs:string"/>
+        <xs:element name="gravedad" type="xs:string"/>
+        <xs:element name="terreno" type="xs:string"/>
+        <xs:element name="superficieAgua" type="xs:string"/>
+        <xs:element name="poblacion" type="xs:string"/>
+        <xs:element name="p.creacionFecha" type="xs:string"/>
       </xs:sequence>
-        <xs:attribute ref="idPlaneta"/>
+      <xs:attribute name="idPlaneta" type="typeId"/>
     </xs:complexType>
   </xs:element>
 
   <xs:element name="personaje">
     <xs:complexType>
       <xs:sequence>
-        <xs:element ref="nombre"/>
-        <xs:element ref="altura"/>
-        <xs:element ref="peso"/>
-        <xs:element ref="peloColor"/>
-        <xs:element ref="pielColor"/>
-        <xs:element ref="ojosColor"/>
-        <xs:element ref="nacimientoAnho"/>
-        <xs:element ref="genero"/>
-        <xs:element ref="fkPlaneta"/>
-        <xs:element ref="creacionFecha"/>
+        <xs:element name="per.nombre" type="xs:string"/>
+        <xs:element name="altura" type="xs:string"/>
+        <xs:element name="peso" type="xs:string"/>
+        <xs:element name="peloColor" type="xs:string"/>
+        <xs:element name="pielColor" type="xs:string"/>
+        <xs:element name="ojosColor" type="xs:string"/>
+        <xs:element name="nacimientoAnho" type="xs:string"/>
+        <xs:element name="genero" type="xs:string"/>
+        <xs:element name="per.creacionFecha" type="xs:string"/>
       </xs:sequence>
-        <xs:attribute ref="idPersonaje"/>
+      <xs:attribute name="idPersonaje" type="typeId"/>
     </xs:complexType>
   </xs:element>
 
@@ -101,18 +55,18 @@
     <xs:complexType>
         <xs:sequence>
         </xs:sequence>
-            <xs:attribute name="fkPersonaje"/>
-            <xs:attribute name="fkAsociacion"/> 
+          <xs:attribute name="fkPersonaje" type="typeId"/>
+          <xs:attribute name="fkAsociacion" type="typeId"/>
     </xs:complexType>
 </xs:element>
 
 <xs:element name="pelicula">
     <xs:complexType>
         <xs:sequence>
-            <xs:element ref="episodio"/>
-            <xs:element ref="titulo"/>
+          <xs:element name="episodio" type="xs:string"/>
+          <xs:element name="titulo" type="xs:string"/>
         </xs:sequence>
-            <xs:attribute name="idPelicula"/>
+        <xs:attribute name="idPelicula" type="typeId"/>
     </xs:complexType>
 </xs:element>
 
@@ -120,8 +74,8 @@
     <xs:complexType>
         <xs:sequence>
         </xs:sequence>
-            <xs:attribute name="fkPersonaje"/> 
-            <xs:attribute name="fkPelicula"/>
+            <xs:attribute name="fkPersonaje" type="typeId"/>
+            <xs:attribute name="fkPelicula" type="typeId"/>
     </xs:complexType>
 </xs:element>
 
@@ -129,10 +83,10 @@
     <xs:complexType>
         <xs:sequence>
         </xs:sequence>
-            <xs:attribute name="idMuerte"/>
-            <xs:attribute name="fkFallecido"/> 
-            <xs:attribute name="fkAsesino"/> 
-            <xs:attribute name="fkPelicula"/>
+            <xs:attribute name="idMuerte" type="typeId"/>
+            <xs:attribute name="fkFallecido" type="typeId"/> 
+            <xs:attribute name="fkAsesino" type="typeId"/> 
+            <xs:attribute name="fkPelicula" type="typeId"/>
     </xs:complexType>
 </xs:element>
 </xs:schema>
