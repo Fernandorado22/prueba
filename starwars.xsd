@@ -1,11 +1,72 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
 
-<!-- Restriciones -->
+<!-- Estructura Base de Datos -->
+
 
 <xs:simpleType name="typeId">
     <xs:restriction base ="xs:nonNegativeInteger"/>
 </xs:simpleType>
+
+<!-- Filas -->
+
+<xs:element name="tabla_asociacion">
+  <xs:complexType>
+    <xs:sequence>
+      <xs:element ref="asociacion"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:element>
+
+<xs:element name="tabla_planeta">
+  <xs:complexType>
+    <xs:sequence>
+      <xs:element ref="planeta"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:element>
+
+<xs:element name="tabla_personaje">
+  <xs:complexType>
+    <xs:sequence>
+      <xs:element ref="personaje"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:element>
+
+<xs:element name="tabla_personajeAsociacion">
+  <xs:complexType>
+    <xs:sequence>
+      <xs:element ref="personajeAsociacion"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:element>
+
+<xs:element name="tabla_pelicula">
+  <xs:complexType>
+    <xs:sequence>
+      <xs:element ref="pelicula"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:element>
+
+<xs:element name="tabla_personajePelicula">
+  <xs:complexType>
+    <xs:sequence>
+      <xs:element ref="personajePelicula"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:element>
+
+<xs:element name="tabla_muerte">
+  <xs:complexType>
+    <xs:sequence>
+      <xs:element ref="muerte"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:element>
+
+<!-- Columnas -->
 
   <xs:element name="asociacion">
     <xs:complexType>
