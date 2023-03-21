@@ -76,49 +76,62 @@
 
 <!-- Columnas -->
 
-  <xs:element name="asociacion">
+<xs:element name="asociacion">
     <xs:complexType>
-      <xs:sequence>
-        <xs:element name="a.nombre" type="xs:string"/>
-      </xs:sequence>
-      <xs:attribute name="idAsociacion" type="typeId"/>
+        <xs:sequence>
+            <xs:element name="a.nombre" type="xs:string"/>
+        </xs:sequence>
+        <xs:attribute name="idAsociacion" type="typeId"/>
     </xs:complexType>
-  </xs:element>
+    <xs:key name="asociacionKey">
+        <xs:selector xpath="."/>
+        <xs:field xpath="@idAsociacion"/>
+    </xs:key>
+</xs:element>
 
-  <xs:element name="planeta">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element name="p.nombre" type="xs:string"/>
-        <xs:element name="rotacionPeriodo" type="xs:string"/>
-        <xs:element name="orbitalPeriodo" type="xs:string"/>
-        <xs:element name="diametro" type="xs:string"/>
-        <xs:element name="clima" type="xs:string"/>
-        <xs:element name="gravedad" type="xs:string"/>
-        <xs:element name="terreno" type="xs:string"/>
-        <xs:element name="superficieAgua" type="xs:string"/>
-        <xs:element name="poblacion" type="xs:string"/>
-        <xs:element name="p.creacionFecha" type="xs:string"/>
-      </xs:sequence>
-      <xs:attribute name="idPlaneta" type="typeId"/>
-    </xs:complexType>
-  </xs:element>
 
-  <xs:element name="personaje">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element name="per.nombre" type="xs:string"/>
-        <xs:element name="altura" type="xs:string"/>
-        <xs:element name="peso" type="xs:string"/>
-        <xs:element name="peloColor" type="xs:string"/>
-        <xs:element name="pielColor" type="xs:string"/>
-        <xs:element name="ojosColor" type="xs:string"/>
-        <xs:element name="nacimientoAnho" type="xs:string"/>
-        <xs:element name="genero" type="xs:string"/>
-        <xs:element name="per.creacionFecha" type="xs:string"/>
-      </xs:sequence>
-      <xs:attribute name="idPersonaje" type="typeId"/>
-    </xs:complexType>
-  </xs:element>
+<xs:element name="planeta">
+  <xs:complexType>
+    <xs:sequence>
+      <xs:element name="p.nombre" type="xs:string"/>
+      <xs:element name="rotacionPeriodo" type="xs:string"/>
+      <xs:element name="orbitalPeriodo" type="xs:string"/>
+      <xs:element name="diametro" type="xs:string"/>
+      <xs:element name="clima" type="xs:string"/>
+      <xs:element name="gravedad" type="xs:string"/>
+      <xs:element name="terreno" type="xs:string"/>
+      <xs:element name="superficieAgua" type="xs:string"/>
+      <xs:element name="poblacion" type="xs:string"/>
+      <xs:element name="p.creacionFecha" type="xs:string"/>
+    </xs:sequence>
+    <xs:attribute name="idPlaneta" type="typeId"/>
+  </xs:complexType>
+  <xs:key name="planetaKey">
+    <xs:selector xpath="."/>
+    <xs:field xpath="@idPlaneta"/>
+  </xs:key>
+</xs:element>
+
+<xs:element name="personaje">
+  <xs:complexType>
+    <xs:sequence>
+      <xs:element name="per.nombre" type="xs:string"/>
+      <xs:element name="altura" type="xs:string"/>
+      <xs:element name="peso" type="xs:string"/>
+      <xs:element name="peloColor" type="xs:string"/>
+      <xs:element name="pielColor" type="xs:string"/>
+      <xs:element name="ojosColor" type="xs:string"/>
+      <xs:element name="nacimientoAnho" type="xs:string"/>
+      <xs:element name="genero" type="xs:string"/>
+      <xs:element name="per.creacionFecha" type="xs:string"/>
+    </xs:sequence>
+    <xs:attribute name="idPersonaje" type="typeId"/>
+  </xs:complexType>
+  <xs:key name="personajeKey">
+    <xs:selector xpath="."/>
+    <xs:field xpath="@idPersonaje"/>
+  </xs:key>
+</xs:element>
 
 <xs:element name="personajeAsociacion">
     <xs:complexType>
