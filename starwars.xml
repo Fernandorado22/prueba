@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<star_wars>
+    <tabla_asociacion>
+        <asociacion idAsociacion="1">
+            <a.nombre> Orden Jedi </a.nombre>
+        </asociacion>
+        <asociacion idAsociacion="2">
+            <a.nombre> Allianza Rebelde </a.nombre>
+        </asociacion>
+        <asociacion idAsociacion="3">
+            <a.nombre> Republica Galáctica </a.nombre>
+        </asociacion>
+        <asociacion idAsociacion="4">
+            <a.nombre> Imperio Galactico </a.nombre>
+        </asociacion>
+        <asociacion idAsociacion="5">
+            <a.nombre> Sith </a.nombre>
+        </asociacion>
+    </tabla_asociacion>
+
+    <tabla_planeta>
+        <planeta idPlaneta="1">
+            <p.nombre> Desconocido </p.nombre>
+        </planeta>
+        <planeta idPlaneta="2">
+            <p.nombre> Tatooine </p.nombre>
+        </planeta>
+        <planeta idPlaneta="3">
+            <p.nombre> Alderaan </p.nombre>
+        </planeta>
+        <planeta idPlaneta="4">
+            <p.nombre> Yavin IV </p.nombre>
+        </planeta>
+        <planeta idPlaneta="5">
+            <p.nombre> Hoth </p.nombre>
+        </planeta>
+    </tabla_planeta>
+
+    <tabla_personajes>
+        <personaje idPersonaje="1">
+            <per.nombre> Luke Skywalker </per.nombre>
+        </personaje>
+        <personaje idPersonaje="2">
+            <per.nombre> C-3PO </per.nombre>
+        </personaje>
+        <personaje idPersonaje="3">
+            <per.nombre> R2-D2 </per.nombre>
+        </personaje>
+        <personaje idPersonaje="4">
+            <per.nombre> Darth Vader </per.nombre>
+        </personaje>
+        <personaje idPersonaje="5">
+            <per.nombre> Leia Organa </per.nombre>
+        </personaje>
+    </tabla_personajes>
+
+    <tabla_personajeAsociacion>
+        <personajeAsociacion fkPersonaje="1">
+            <per.nombre>  </per.nombre>
+        </personajeAsociacion>
+        <personajeAsociacion fkPersonaje="2">
+            <per.nombre>  </per.nombre>
+        </personajeAsociacion>
+        <personajeAsociacion fkPersonaje="3">
+            <per.nombre>  </per.nombre>
+        </personajeAsociacion>
+        <personajeAsociacion fkPersonaje="4">
+            <per.nombre>  </per.nombre>
+        </personajeAsociacion>
+        <personajeAsociacion fkPersonaje="5">
+            <per.nombre>  </per.nombre>
+        </personajeAsociacion>
+    </tabla_personajeAsociacion>
+
+    <tabla_pelicula>
+        <pelicula idPelicula="1">
+            <episodio> Episodio I </episodio>
+        </pelicula>
+        <pelicula idPelicula="2">
+            <episodio> Episodio II </episodio>
+        </pelicula>
+        <pelicula idPelicula="3">
+            <episodio> Episodio III </episodio>
+        </pelicula>
+        <pelicula idPelicula="4">
+            <episodio> Episodio IV </episodio>
+        </pelicula>
+        <pelicula idPelicula="5">
+            <episodio> Episodio V </episodio>
+        </pelicula>
+    </tabla_pelicula>
+</star_wars>
