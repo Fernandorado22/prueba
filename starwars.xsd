@@ -172,8 +172,11 @@
     </xs:complexType>
 </xs:element>
 
+<!-- Restricciones -->
+
 <xs:simpleType name="typeId">
     <xs:restriction base ="xs:nonNegativeInteger"/>
 </xs:simpleType>
+
 
 </xs:schema>

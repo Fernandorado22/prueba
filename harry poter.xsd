@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+
+<!-- Estructura Base de Datos -->
+<xs:element name="harrypoter">
+  <xs:complexType>
+    <xs:sequence>
+      <xs:element ref="casas"/>
+      <xs:element ref="jugadores"/>
+      <xs:element ref="puestos"/>
+      <xs:element ref="escobas"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:element>
+
+<!-- Filas -->
+
+<xs:element name="tabla_casas">
+  <xs:complexType>
+    <xs:sequence>
+        <xs:element ref="casas" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:element>
+
+<xs:element name="tabla_jugadores">
+  <xs:complexType>
+    <xs:sequence>
+        <xs:element ref="jugadores" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:element>
+
+<xs:element name="tabla_puestos">
+  <xs:complexType>
+    <xs:sequence>
+        <xs:element ref="puestos" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:element>
+
+<xs:element name="tabla_escobas">
+  <xs:complexType>
+    <xs:sequence>
+        <xs:element ref="escobas" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:element>
+
+<!-- Columnas -->
+
+<xs:element name="casas">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="idCasa" type="xs:string"/>
+        <xs:element name="nombre" type="xs:string"/>
+        <xs:element name="jefe" type="xs:string"/>
+        <xs:element name="puntuacion" type="xs:string"/>
+      </xs:sequence>
+      <xs:attribute name="capitan" type="typeId"/>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="jugadores">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="idJugador" type="xs:string"/>
+        <xs:element name="nombre" type="xs:string"/>
+        <xs:element name="apellido" type="xs:string"/>
+        <xs:element name="tantos" type="xs:string"/>
+      </xs:sequence>
+        <xs:attribute name="casa" type="typeId"/>
+        <xs:attribute name="puesto" type="typeId"/>
+        <xs:attribute name="escoba" type="typeId"/>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="puestos">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="idPuesto" type="xs:string"/>
+        <xs:element name="nombre" type="xs:string"/>
+        <xs:element name="descripcion" type="xs:string"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="escobas">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="idEscoba" type="xs:string"/>
+        <xs:element name="marca" type="xs:string"/>
+        <xs:element name="modelo" type="xs:string"/>
+        <xs:element name="fecha" type="xs:date"/>
+        <xs:element name="caracteristicas" type="xs:string"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+<!-- Restricciones -->
+
+<xs:simpleType name="typeId">
+    <xs:restriction base ="xs:nonNegativeInteger"/>
+</xs:simpleType>
+
+</xs:schema>
