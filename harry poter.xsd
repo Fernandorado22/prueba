@@ -63,6 +63,10 @@
       <xs:selector xpath="."/>
       <xs:field xpath="@idCasa"/>
     </xs:key>
+    <xs:keyref name="capitan" refer="jugadores">
+      <xs:selector xpath="."/>
+      <xs:field xpath="@idCasa"/>
+    </xs:keyref>
   </xs:element>
 
   <xs:element name="jugadores">
@@ -81,6 +85,18 @@
       <xs:selector xpath="."/>
       <xs:field xpath="@idJugador"/>
     </xs:key>
+    <xs:keyref name="casa" refer="casas">
+      <xs:selector xpath="."/>
+      <xs:field xpath="@idCasa"/>
+    </xs:keyref>
+    <xs:keyref name="puesto" refer="puestos">
+      <xs:selector xpath="."/>
+      <xs:field xpath="@idCasa"/>
+    </xs:keyref>
+    <xs:keyref name="escoba" refer="escobas">
+      <xs:selector xpath="."/>
+      <xs:field xpath="@idCasa"/>
+    </xs:keyref>
   </xs:element>
 
   <xs:element name="puestos">
