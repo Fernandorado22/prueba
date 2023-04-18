@@ -52,49 +52,65 @@
 <xs:element name="casas">
     <xs:complexType>
       <xs:sequence>
-        <xs:element name="idCasa" type="xs:string"/>
-        <xs:element name="nombre" type="xs:string"/>
-        <xs:element name="jefe" type="xs:string"/>
-        <xs:element name="puntuacion" type="xs:string"/>
+        <xs:element name="idCasa" type="smallint"/>
+        <xs:element name="nombre" type="typeText20"/>
+        <xs:element name="jefe" type="typeText40"/>
+        <xs:element name="puntuacion" type="integer"/>
       </xs:sequence>
-      <xs:attribute name="capitan" type="typeId"/>
+      <xs:attribute name="capitan" type="char"/>
     </xs:complexType>
+    <xs:key name="casasKey">
+      <xs:selector xpath="."/>
+      <xs:field xpath="@idCasa"/>
+    </xs:key>
   </xs:element>
 
   <xs:element name="jugadores">
     <xs:complexType>
       <xs:sequence>
-        <xs:element name="idJugador" type="xs:string"/>
-        <xs:element name="nombre" type="xs:string"/>
-        <xs:element name="apellido" type="xs:string"/>
-        <xs:element name="tantos" type="xs:string"/>
+        <xs:element name="idJugador" type="smallint"/>
+        <xs:element name="nombre" type="typeText20"/>
+        <xs:element name="apellido" type="typeText20"/>
+        <xs:element name="tantos" type="smallint"/>
       </xs:sequence>
-        <xs:attribute name="casa" type="typeId"/>
-        <xs:attribute name="puesto" type="typeId"/>
-        <xs:attribute name="escoba" type="typeId"/>
+        <xs:attribute name="casa" type="smallint"/>
+        <xs:attribute name="puesto" type="smallint"/>
+        <xs:attribute name="escoba" type="char"/>
     </xs:complexType>
+    <xs:key name="jugadoresKey">
+      <xs:selector xpath="."/>
+      <xs:field xpath="@idJugador"/>
+    </xs:key>
   </xs:element>
 
   <xs:element name="puestos">
     <xs:complexType>
       <xs:sequence>
-        <xs:element name="idPuesto" type="xs:string"/>
-        <xs:element name="nombre" type="xs:string"/>
+        <xs:element name="idPuesto" type="smallint"/>
+        <xs:element name="nombre" type="typeText20"/>
         <xs:element name="descripcion" type="xs:string"/>
       </xs:sequence>
     </xs:complexType>
+    <xs:key name="puestosKey">
+      <xs:selector xpath="."/>
+      <xs:field xpath="@idPuesto"/>
+    </xs:key>
   </xs:element>
 
   <xs:element name="escobas">
     <xs:complexType>
       <xs:sequence>
-        <xs:element name="idEscoba" type="xs:string"/>
-        <xs:element name="marca" type="xs:string"/>
-        <xs:element name="modelo" type="xs:string"/>
-        <xs:element name="fecha" type="xs:date"/>
-        <xs:element name="caracteristicas" type="xs:string"/>
+        <xs:element name="idEscoba" type="smallint"/>
+        <xs:element name="marca" type="typeText20"/>
+        <xs:element name="modelo" type="typeText40"/>
+        <xs:element name="fecha" type="integer"/>
+        <xs:element name="caracteristicas" type="char"/>
       </xs:sequence>
     </xs:complexType>
+    <xs:key name="escobasKey">
+      <xs:selector xpath="."/>
+      <xs:field xpath="@idEscoba"/>
+    </xs:key>
   </xs:element>
 
 <!-- Restricciones -->
@@ -102,5 +118,38 @@
 <xs:simpleType name="typeId">
     <xs:restriction base ="xs:nonNegativeInteger"/>
 </xs:simpleType>
+
+<xs:simpleType name="integer">
+  <xs:restriction base="xs:integer">
+    <xs:minInclusive value="0"></xs:minInclusive>
+    <xs:maxInclusive value="99999999"></xs:maxInclusive>
+  </xs:restriction>
+</xs:simpleType>
+
+<xs:simpleType name="smallint"> 
+  <xs:restriction base="xs:integer"> 
+    <xs:minExclusive value="0"></xs:minExclusive> 
+    <xs:maxInclusive value="99"></xs:maxInclusive> 
+  </xs:restriction> 
+</xs:simpleType>
+
+<xs:simpleType name="typeText20"> 
+  <xs:restriction base="xs:string"> 
+    <xs:maxLength value="20"/> 
+  </xs:restriction> 
+</xs:simpleType>
+
+<xs:simpleType name="typeText40"> 
+  <xs:restriction base="xs:string"> 
+    <xs:maxLength value="40"/> 
+  </xs:restriction> 
+</xs:simpleType>
+
+<xs:simpleType name="char">
+  <xs:restriction base="xs:string">
+    <xs:maxLength value="7"/>
+  </xs:restriction>
+</xs:simpleType>
+
 
 </xs:schema>
